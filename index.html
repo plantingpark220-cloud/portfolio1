@@ -1,249 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 | My Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數位科技概論作業列表</title>
+  
+  <!-- ==================== 1. CSS 樣式區塊 ==================== -->
+  <style>
+    body {
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f7f6;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 8px;
+    }
+
+    /* 卡片容器與樣式 */
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-color: #3498db;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2980b9;
+    }
+
+    /* 返回按鈕樣式 */
+    .back-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background-color 0.2s;
+    }
+
+    .back-btn:hover {
+      background-color: #2980b9;
+    }
+
+    /* 詳細內容區塊 */
+    .detail-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body>
 
-    <!-- 導覽列 -->
-    <nav class="fixed w-full bg-slate-900/90 backdrop-blur border-b border-slate-800 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-wider text-indigo-400">PORTFOLIO</a>
-            <div class="space-x-6 text-sm">
-                <a href="#about" class="hover:text-indigo-400 transition">關於我</a>
-                <a href="#skills" class="hover:text-indigo-400 transition">專業技能</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">精選作品</a>
-                <a href="#assignments" class="hover:text-indigo-400 transition">數位科技概論作業</a>
-                <a href="#contact" class="hover:text-indigo-400 transition">聯絡方式</a>
-            </div>
-        </div>
-    </nav>
+  <!-- ==================== 2. HTML 內容區塊 ==================== -->
+  
+  <!-- 頁面 A：作業卡片列表 -->
+  <section id="assignment-list">
+    <h2>數位科技概論作業</h2>
+    <div class="card-container">
+      
+      <!-- 卡片 1 -->
+      <div class="card" onclick="showDetail('hw1')">
+        <h3>作業一：網頁基礎入門 HTML/CSS</h3>
+        <p>點擊查看作業說明、個人心得與實作成果...</p>
+      </div>
 
-    <!-- 主視覺區 / Hero -->
-    <section class="min-h-screen flex items-center justify-center pt-20 px-4">
-        <div class="text-center max-w-3xl">
-            <p class="text-indigo-400 font-medium mb-2 tracking-wide">Hello, I'm</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                創作者 / 設計師 / 開發者
-            </h1>
-            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                專注於數位內容創作與視覺設計。熱愛將創意轉化為極致的視覺與互動體驗。
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg font-medium transition">查看作品</a>
-                <a href="#assignments" class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-lg font-medium transition">課程作業</a>
-                <a href="#contact" class="border border-slate-700 hover:border-slate-500 text-slate-300 px-6 py-3 rounded-lg font-medium transition">聯絡我</a>
-            </div>
-        </div>
-    </section>
+      <!-- 卡片 2 -->
+      <div class="card" onclick="showDetail('hw2')">
+        <h3>作業二：數位科技趨勢報告</h3>
+        <p>點擊查看人工智慧與物聯網趨勢相關摘要...</p>
+      </div>
 
-    <!-- 關於我 / About -->
-    <section id="about" class="py-20 border-t border-slate-800 bg-slate-950/50">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b border-indigo-500/30 pb-4">關於我 About Me</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4 text-slate-300 leading-relaxed">
-                    <p>你好！我是目前就讀大學的新生。我對視覺表達與創作抱持極大熱情，並持續積累跨領域的專業實力。</p>
-                    <p>這個作品集網站紀錄了我的成長軌跡與專案成果，未來將持續更新高質量的創作專案。</p>
-                </div>
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
-                    <h3 class="font-semibold text-lg text-indigo-400 mb-4">學習焦點</h3>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> 視覺設計與角色企劃</li>
-                        <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> 專案管理與敘事構思</li>
-                        <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i> 前端網頁呈現與互動介面</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- 卡片 3 -->
+      <div class="card" onclick="showDetail('hw3')">
+        <h3>作業三：期末專題設計</h3>
+        <p>點擊查看個人專題簡介與作品連結...</p>
+      </div>
 
-    <!-- 技能區 / Skills -->
-    <section id="skills" class="py-20 border-t border-slate-800">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b border-indigo-500/30 pb-4">專業技能 Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-lg text-center">
-                    <i class="fa-solid fa-pen-nib text-3xl text-indigo-400 mb-2"></i>
-                    <h3 class="font-medium">視覺設計</h3>
-                </div>
-                <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-lg text-center">
-                    <i class="fa-solid fa-layer-group text-3xl text-purple-400 mb-2"></i>
-                    <h3 class="font-medium">專案企劃</h3>
-                </div>
-                <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-lg text-center">
-                    <i class="fa-solid fa-code text-3xl text-pink-400 mb-2"></i>
-                    <h3 class="font-medium">網頁基礎</h3>
-                </div>
-                <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-lg text-center">
-                    <i class="fa-solid fa-film text-3xl text-emerald-400 mb-2"></i>
-                    <h3 class="font-medium">數位媒體</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 作品展示區 / Projects -->
-    <section id="projects" class="py-20 border-t border-slate-800 bg-slate-950/50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 border-b border-indigo-500/30 pb-4">精選作品 Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition">
-                    <div class="h-48 bg-slate-800 flex items-center justify-center">
-                        <i class="fa-solid fa-laptop-code text-4xl text-slate-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 text-indigo-300">專案開發預留區</h3>
-                        <p class="text-slate-400 text-sm mb-4">綜合課程與個人創作的成果展現展示卡片。</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">HTML/CSS</span>
-                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition">
-                    <div class="h-48 bg-slate-800 flex items-center justify-center">
-                        <i class="fa-solid fa-palette text-4xl text-slate-600"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2 text-purple-300">視覺設計預留區</h3>
-                        <p class="text-slate-400 text-sm mb-4">專案圖檔、插畫與介面設計展示。</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">Design</span>
-                            <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300">UI/UX</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- 頁面 B：作業詳細內容（預設隱藏） -->
+  <section id="assignment-detail" style="display: none;">
+    <button class="back-btn" onclick="showList()">← 返回作業列表</button>
+    
+    <div class="detail-card">
+      <!-- 詳細內容 1 -->
+      <div id="hw1-detail" class="detail-content" style="display: none;">
+        <h2>作業一：網頁基礎入門 HTML/CSS</h2>
+        <p><strong>繳交日期：</strong>2026/03/10</p>
+        <hr>
+        <p>這裡是作業一的詳細介紹、網頁結構規劃與心得說明。</p>
+      </div>
 
-    <!-- 數位科技概論作業 / Course Assignments -->
-    <section id="assignments" class="py-20 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-3 border-b border-indigo-500/30 pb-4 inline-block">數位科技概論作業</h2>
-                <p class="text-slate-400 text-sm mt-2">Week 02 HTML & CSS 課程練習與小作業紀錄</p>
-            </div>
+      <!-- 詳細內容 2 -->
+      <div id="hw2-detail" class="detail-content" style="display: none;">
+        <h2>作業二：數位科技趨勢報告</h2>
+        <p><strong>繳交日期：</strong>2026/04/15</p>
+        <hr>
+        <p>這裡是作業二關於生成式 AI 與物聯網產業趨勢的研討內容。</p>
+      </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 詳細內容 3 -->
+      <div id="hw3-detail" class="detail-content" style="display: none;">
+        <h2>作業三：期末專題設計</h2>
+        <p><strong>繳交日期：</strong>2026/06/01</p>
+        <hr>
+        <p>這裡是期末專題的題目架構、設計理念與最終成果呈現。</p>
+      </div>
+    </div>
+  </section>
 
-                <!-- 活動 01 卡片 -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 hover:border-indigo-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">HTML 活動 01</span>
-                            <i class="fa-solid fa-font text-slate-500"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-100">文字層級與排版</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            科學活動介紹頁（水與生活），包含標題層級 (h1~h3)、段落文字、粗體、斜體以及 H<sub>2</sub>O 下標與 cm<sup>2</sup> 上標練習。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-                        <span>檔名: 01-html-text.html</span>
-                        <a href="01-html-text.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium">檢視頁面 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></a>
-                    </div>
-                </div>
+  <!-- ==================== 3. JavaScript 腳本區塊 ==================== -->
+  <script>
+    // 點擊卡片時，顯示對應的詳細頁面
+    function showDetail(hwId) {
+      // 1. 隱藏列表區塊
+      document.getElementById('assignment-list').style.display = 'none';
+      
+      // 2. 顯示詳細頁區塊
+      document.getElementById('assignment-detail').style.display = 'block';
+      
+      // 3. 先隱藏所有的詳細內容
+      const details = document.querySelectorAll('.detail-content');
+      details.forEach(item => item.style.display = 'none');
+      
+      // 4. 僅顯示點擊該項目的詳細內容
+      document.getElementById(hwId + '-detail').style.display = 'block';
+      
+      // 5. 自動將捲軸移至頁面最上方
+      window.scrollTo(0, 0);
+    }
 
-                <!-- 活動 02 卡片 -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 hover:border-indigo-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">HTML 活動 02</span>
-                            <i class="fa-solid fa-photo-film text-slate-500"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-100">多媒體整合</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            自然觀察任務卡，練習圖片 (img, alt, PNG, SVG)、提示音 (audio controls) 與花朵短片 (video) 的整合運用。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-                        <span>檔名: 02-html-media.html</span>
-                        <a href="02-html-media.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium">檢視頁面 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></a>
-                    </div>
-                </div>
-
-                <!-- 活動 03 卡片 -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 hover:border-indigo-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">HTML 活動 03</span>
-                            <i class="fa-solid fa-table-list text-slate-500"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-100">清單與表格</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            紙橋挑戰社活動準備頁，運用無序清單 (ul)、有序步驟編號 (ol) 以及任務分工表格 (table, tr, th, td)。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-                        <span>檔名: 03-html-plan.html</span>
-                        <a href="03-html-plan.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium">檢視頁面 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></a>
-                    </div>
-                </div>
-
-                <!-- 活動 04 卡片 -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 hover:border-indigo-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">HTML 活動 04</span>
-                            <i class="fa-solid fa-list-check text-slate-500"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-100">表單元件設計</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            社團體驗報名表介面，包含單行輸入 (text)、下拉選單 (select)、單選 (radio)、複選 (checkbox) 及多行留言區。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-                        <span>檔名: 04-html-form.html</span>
-                        <a href="04-html-form.html" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-medium">檢視頁面 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></a>
-                    </div>
-                </div>
-
-                <!-- CSS 活動 05-09 成果選題卡片 -->
-                <div class="bg-slate-800/40 border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 transition flex flex-col justify-between md:col-span-2 lg:col-span-2">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">CSS 活動 05-09 統一作業</span>
-                            <i class="fa-solid fa-wand-magic-sparkles text-purple-400"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-2 text-purple-200">CSS 樣式與響應式排版實作</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                            涵蓋視覺風格 (CSS 05)、網頁版型佈局 (CSS 06)、卡片切齊 (CSS 07)、RWD 手機響應式適應 (CSS 08) 與 WAVE 無障礙網頁檢測修正 (CSS 09)。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
-                        <span>成果選自: CSS 05~09 練習案例</span>
-                        <a href="#" class="text-purple-400 hover:text-purple-300 font-medium">檢視選做成果 <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 聯絡方式 / Contact -->
-    <section id="contact" class="py-20 border-t border-slate-800 bg-slate-950/50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">聯絡方式 Contact</h2>
-            <p class="text-slate-400 mb-8">如有合作機會或課程問題，歡迎隨時透過社交媒體或 Email 聯繫！</p>
-            <div class="flex justify-center space-x-6 text-2xl text-slate-400">
-                <a href="#" class="hover:text-indigo-400 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-indigo-400 transition"><i class="fa-envelope fa-solid"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-6 border-t border-slate-800 text-center text-xs text-slate-500">
-        <p>© 2026 My Portfolio. All rights reserved.</p>
-    </footer>
+    // 點擊返回按鈕時，切換回列表頁面
+    function showList() {
+      document.getElementById('assignment-detail').style.display = 'none';
+      document.getElementById('assignment-list').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
-```eof
-
