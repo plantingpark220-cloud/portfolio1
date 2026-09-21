@@ -37,6 +37,11 @@
             <div class="flex justify-center gap-4">
                 <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg font-medium transition">查看作品</a>
                 <a href="#assignments" class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-lg font-medium transition">課程作業</a>
+<a href="water-science.html" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-lg font-medium transition">水與生活：小小科學探索日</a>
+<a href="water-science.html" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-lg font-medium transition">水與生活</a>
+<a href="nature.html" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium transition">自然觀察任務卡</a>
+<a href="paper-bridge.html" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-medium transition">紙橋挑戰社</a>
+<a href="club-form.html" class="bg-rose-600 hover:bg-rose-500 text-white px-6 py-3 rounded-lg font-medium transition">社團體驗表</a>
                 <a href="#contact" class="border border-slate-700 hover:border-slate-500 text-slate-300 px-6 py-3 rounded-lg font-medium transition">聯絡我</a>
             </div>
         </div>
