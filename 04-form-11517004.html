@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社團體驗活動報名表</title>
+</head>
+<body>
+    <h1>社團體驗活動線上報名</h1>
+    <p>請填寫以下資訊以完成體驗活動的報名手續。</p>
+
+    <form action="#" method="post">
+        <p>
+            <label for="username">姓名：</label>
+            <input type="text" id="username" name="username" required placeholder="請輸入姓名">
+        </p>
+
+        <p>
+            <label>身份類別：</label><br>
+            <input type="radio" id="student" name="identity" value="student" checked>
+            <label for="student">校內學生</label>
+            <input type="radio" id="teacher" name="identity" value="teacher">
+            <label for="teacher">教職員</label>
+        </p>
+
+        <p>
+            <label for="department">參加場次：</label>
+            <select id="department" name="department">
+                <option value="session1">第一場：週二下午場</option>
+                <option value="session2">第二場：週四晚上場</option>
+            </select>
+        </p>
+
+        <p>
+            <label>感興趣的主題（可複選）：</label><br>
+            <input type="checkbox" id="topic1" name="topic" value="web">
+            <label for="topic1">網頁前端設計</label>
+            <input type="checkbox" id="topic2" name="topic" value="art">
+            <label for="topic2">數位插畫繪製</label>
+        </p>
+
+        <p>
+            <label for="message">備註或想對我們說的話：</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea>
+        </p>
+
+        <p>
+            <button type="submit">送出報名</button>
+            <button type="reset">重新填寫</button>
+        </p>
+    </form>
+
+    <p><a href="index.html">返回個人作品集首頁</a></p>
+</body>
+</html>
