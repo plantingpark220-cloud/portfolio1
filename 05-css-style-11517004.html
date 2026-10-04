@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同一份內容，換一種風格</title>
+    <style>
+        /* 全域樣式設定 */
+        body {
+            font-family: 'Segoe UI', "Microsoft JhengHei", sans-serif;
+            background-color: #f0f4f8;
+            color: #333333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        /* 標題區塊 */
+        h1 {
+            color: #1e3a8a;
+            text-align: center;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+
+        /* 區塊卡片美化 */
+        .card {
+            background-color: #ffffff;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #3b82f6;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+
+        /* 按鈕樣式 */
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn-back:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <h1>同一份內容，換一種風格</h1>
+    <p style="text-align: center; color: #64748b;">透過 CSS 樣式設定，為網頁加入背景色、邊框與卡片式版型設計。</p>
+
+    <div class="card">
+        <h2>🎨 CSS 簡介</h2>
+        <p>CSS（階層式樣式表）是用來控制網頁視覺呈現的語言。透過設定顏色、字體、邊距與排列方式，能讓原本樸素的 HTML 結構變得美觀且易於閱讀。</p>
+    </div>
+
+    <div class="card">
+        <h2>💡 學習重點</h2>
+        <ul>
+            <li>掌握 HTML 與 CSS 的連結方式</li>
+            <li>學會使用內部樣式表（`style` 標籤）</li>
+            <li>調整顏色、字體、陰影與圓角樣式</li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="btn-back">返回個人作品集首頁</a>
+</body>
+</html>
